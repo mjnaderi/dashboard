@@ -143,6 +143,8 @@ interface Window {
   netdataTheme: "white" | "slate"
   netdataAlarmsNotifCallback: ((x: any) => boolean) | undefined
 
+  alarmsCallback?: (activeAlarms: unknown) => void
+  switchRegistryModalHandler: () => void
   urlOptions?: {[key: string]: any}
 
   __REDUX_DEVTOOLS_EXTENSION__: (() => void | undefined)
