@@ -62,7 +62,7 @@ export const windowFocusChangeAction = createAction<WindowFocusChangeAction>(
 )
 
 export interface FetchHelloPayload {
-  serverDefault: string,
+  serverDefault: string
 }
 
 export const fetchHelloAction = createRequestAction<
@@ -74,17 +74,17 @@ export const fetchHelloAction = createRequestAction<
 
 interface UpdatePersonUrlsAction {
   personGuid: string
-  registryMachines: {[key: string]: RegistryMachine}
+  registryMachines: { [key: string]: RegistryMachine }
   registryMachinesArray: RegistryMachine[]
 }
 export const updatePersonUrlsAction = createAction<UpdatePersonUrlsAction>(
   `${storeKey}/updatePersonUrlsAction`,
 )
 
-export interface StartAlarmsPayload { serverDefault: string }
-export const startAlarmsAction = createAction<StartAlarmsPayload>(
-  `${storeKey}/startAlarmsAction`,
-)
+export interface StartAlarmsPayload {
+  serverDefault: string
+}
+export const startAlarmsAction = createAction<StartAlarmsPayload>(`${storeKey}/startAlarmsAction`)
 
 export const fetchAllAlarmsAction = createRequestAction(`${storeKey}/fetchAllAlarmsAction`)
 
@@ -97,16 +97,23 @@ export interface SetOptionAction {
   key: string
   value: unknown
 }
-export const setOptionAction = createAction<SetOptionAction>(
-  `${storeKey}/setOptionAction`,
-)
+export const setOptionAction = createAction<SetOptionAction>(`${storeKey}/setOptionAction`)
 
 export const resetOptionsAction = createAction(`${storeKey}/resetOptions`)
 
-export const loadSnapshotAction = createAction<{snapshot: Snapshot}>(
+export const loadSnapshotAction = createAction<{ snapshot: Snapshot }>(
   `${storeKey}/loadSnapshotAction`,
 )
 
 export const chartsMetadataRequestSuccess = createAction<{ data: ChartsMetadata }>(
   `${storeKey}/chartsMetadataRequestSuccess`,
 )
+
+export interface SetSpacePanelStatusActionPayload {
+  isActive: boolean
+}
+export const setSpacePanelStatusAction = createAction<SetSpacePanelStatusActionPayload>(
+  `${storeKey}/setSpacePanelStatusAction`,
+)
+
+export const resetRegistry = createAction(`${storeKey}/resetRegistry`)
